@@ -1,324 +1,72 @@
 /*
-    ĞšĞ¾Ğ´Ñ‹ Ğ²Ğ¾Ğ·Ğ²Ñ€Ğ°Ñ‚Ğ°: 
+    Š®¤ë ¢®§¢à â : 
 
-    Ğ’Ñ‹Ğ±Ğ¾Ñ€ ÑĞ·Ñ‹ĞºĞ°:
-        1 - Ğ ÑƒÑÑĞºĞ¸Ğ¹
-        2 - ĞĞ½Ğ³Ğ»Ğ¸Ğ¹ÑĞºĞ¸Ğ¹ 
+    ‚ë¡®à ï§ëª :
+        1 - ãááª¨©
+        2 - €­£«¨©áª¨© 
 */
 
 #include <iostream>
 
-// ĞŸĞ¾Ğ´ĞºĞ»ÑÑ‡ĞµĞ½Ğ¸Ğµ namespaces
+// ®¤ª«îç¥­¨¥ namespaces
 
 using std::cout;
 using std::cin;
 using std::endl;
 using std::string;
 using std::getline;
+using std::size;
 
-// Ğ¤ÑƒĞ½ĞºÑ†Ğ¸Ğ¸ Ğ´Ğ»Ñ Ğ¿Ñ€Ğ¾Ğ²ĞµÑ€Ğ¾Ğº
+// Œ áá¨¢ë á¨¬¢®«®¢
+
+string english = "f,dult`;pbqrkvyjghcnea[wxio]sm'.zF,DULT`;PBQRKVYJGHCNEA[WXIO]SM'.Z  ?";
+string russian = " ¡¢£¤¥ñ¦§¨©ª«¬­®¯àáâãäåæçèéêëìíîï€‚ƒ„…ğ†‡ˆ‰Š‹Œ‘’“”•–—˜™š›œŸ  ?";
+
+// ”ã­ªæ¨¨ ¤«ï ¯à®¢¥à®ª
 
 char englishCharToRussianChar(char chars)
 {
-    // Ğ½Ğµ Ğ·Ğ°Ğ³Ğ»Ğ°Ğ²Ğ½Ñ‹Ğµ Ğ±ÑƒĞºĞ²Ñ‹
-    if (chars == 'q')
-    {
-        return 'Ğ¹';
-    }
-    else if (chars == 'w')
-    {
-        return 'Ñ†';
-    }
-    else if (chars == 'e')
-    {
-        return 'Ñƒ';
-    }
-    else if (chars == 'r')
-    {
-        return 'Ğº';
-    }
-    else if (chars == 't')
-    {
-        return 'Ğµ';
-    }
-    else if (chars == 'y')
-    {
-        return 'Ğ½';
-    }
-    else if (chars == 'u')
-    {
-        return 'Ğ³';
-    }
-    else if (chars == 'i')
-    {
-        return 'Ñˆ';
-    }
-    else if (chars == 'o')
-    {
-        return 'Ñ‰';
-    }
-    else if (chars == 'p')
-    {
-        return 'Ğ·';
-    }
-    else if (chars == 'a')
-    {
-        return 'Ñ„';
-    }
-    else if (chars == 's')
-    {
-        return 'Ñ‹';
-    }
-    else if (chars == 'd')
-    {
-        return 'Ğ²';
-    }
-    else if (chars == 'f')
-    {
-        return 'Ğ°';
-    }
-    else if (chars == 'g')
-    {
-        return 'Ğ¿';
-    }
-    else if (chars == 'h')
-    {
-        return 'Ñ€';
-    }
-    else if (chars == 'j')
-    {
-        return 'Ğ¾';
-    }
-    else if (chars == 'k')
-    {
-        return 'Ğ»';
-    }
-    else if (chars == 'l')
-    {
-        return 'Ğ´';
-    }
-    else if (chars == 'z')
-    {
-        return 'Ñ';
-    }
-    else if (chars == 'x')
-    {
-        return 'Ñ‡';
-    }
-    else if (chars == 'c')
-    {
-        return 'Ñ';
-    }
-    else if (chars == 'v')
-    {
-        return 'Ğ¼';
-    }
-    else if (chars == 'b')
-    {
-        return 'Ğ¸';
-    }
-    else if (chars == 'n')
-    {
-        return 'Ñ‚';
-    }
-    else if (chars == 'm')
-    {
-        return 'ÑŒ';
-    }
-    // Ğ¡Ğ¿ĞµÑ†Ğ¸Ğ°Ğ»ÑŒĞ½Ñ‹Ğµ ÑĞ¸Ğ¼Ğ²Ğ¾Ğ»Ñ‹ (Ğ½Ğµ Ğ·Ğ°Ğ³Ğ»Ğ°Ğ²Ğ½Ñ‹Ğµ)
-    else if (chars == '[')
-    {
-        return 'Ñ…';
-    }
-    else if (chars == ']')
-    {
-        return 'ÑŠ';
-    }
-    else if (chars == ';')
-    {
-        return 'Ğ¶';
-    }
-    else if (chars == '\'')
-    {
-        return 'Ñ';
-    }
-    else if (chars == ',')
-    {
-        return 'Ğ±';
-    }
-    else if (chars == '.')
-    {
-        return 'Ñ';
-    }
-    // Ğ—Ğ°Ğ³Ğ»Ğ°Ğ²Ğ½Ñ‹Ğµ Ğ±ÑƒĞºĞ²Ñ‹
-    else if (chars == 'Q')
-    {
-        return 'Ğ™';
-    }
-    else if (chars == 'W')
-    {
-        return 'Ğ¦';
-    }
-    else if (chars == 'E')
-    {
-        return 'Ğ£';
-    }
-    else if (chars == 'R')
-    {
-        return 'Ğš';
-    }
-    else if (chars == 'T')
-    {
-        return 'Ğ•';
-    }
-    else if (chars == 'Y')
-    {
-        return 'Ğ';
-    }
-    else if (chars == 'U')
-    {
-        return 'Ğ“';
-    }
-    else if (chars == 'I')
-    {
-        return 'Ğ¨';
-    }
-    else if (chars == 'O')
-    {
-        return 'Ğ©';
-    }
-    else if (chars == 'P')
-    {
-        return 'Ğ—';
-    }
-    else if (chars == 'A')
-    {
-        return 'Ğ¤';
-    }
-    else if (chars == 'S')
-    {
-        return 'Ğ«';
-    }
-    else if (chars == 'D')
-    {
-        return 'Ğ’';
-    }
-    else if (chars == 'F')
-    {
-        return 'Ğ';
-    }
-    else if (chars == 'G')
-    {
-        return 'ĞŸ';
-    }
-    else if (chars == 'H')
-    {
-        return 'Ğ ';
-    }
-    else if (chars == 'J')
-    {
-        return 'Ğ';
-    }
-    else if (chars == 'K')
-    {
-        return 'Ğ›';
-    }
-    else if (chars == 'L')
-    {
-        return 'Ğ”';
-    }
-    else if (chars == 'Z')
-    {
-        return 'Ğ¯';
-    }
-    else if (chars == 'X')
-    {
-        return 'Ğ§';
-    }
-    else if (chars == 'C')
-    {
-        return 'Ğ¡';
-    }
-    else if (chars == 'V')
-    {
-        return 'Ğœ';
-    }
-    else if (chars == 'B')
-    {
-        return 'Ğ˜';
-    }
-    else if (chars == 'N')
-    {
-        return 'Ğ¢';
-    }
-    else if (chars == 'M')
-    {
-        return 'Ğ¬';
-    }
-    // Ğ¡Ğ¿ĞµÑ†Ğ¸Ğ°Ğ»ÑŒĞ½Ñ‹Ğµ ÑĞ¸Ğ¼Ğ²Ğ¾Ğ»Ñ‹ (Ğ·Ğ°Ğ³Ğ»Ğ°Ğ²Ğ½Ñ‹Ğµ)
-    else if (chars == '{')
-    {
-        return 'Ğ¥';
-    }
-    else if (chars == '}')
-    {
-        return 'Ğª';
-    }
-    else if (chars == ':')
-    {
-        return 'Ğ–';
-    }
-    else if (chars == '"')
-    {
-        return 'Ğ­';
-    }
-    else if (chars == '<')
-    {
-        return 'Ğ‘';
-    }
-    else if (chars == '>')
-    {
-        return 'Ğ®';
-    } else {
-        return chars;
+    for (int i {0}; i <= size(english); i++) // ‘çñâç¨ª ¯¥à¥¡®à  á¨¬¢®«®¢ ¤«ï ¨­¢¥àâ æ¨¨
+    {
+        char englishChar { english[i] }; // ‘¨¬¢®« ¨§ ¬ áá¨¢  ¯®¤ ­®¬¥à®¬ áçñâç¨ª 
+
+        if (chars == englishChar) // …á«¨ ¯¥à¥¤ ­­ë© á¨¬¢®« à ¢¥­ ®¤­®¬ã ¨§ á¨¬¢®«®¢ ¨§ ¬ áá¨¢ 
+        {
+            char russianChar { russian[i] }; // ®«ãç ¥¬ â¥ªãé¨© á®¢¯ ¢è¨© á¨¬¢®«
+            return russianChar; // ‚®§¢à é ¥¬ ã¦¥ ¯¥à¥¤¥« ­­ë© á¨¬¢®«
+        }
     }
 }
 
 string reverseString() 
 {
-    string inputString {};
+    string inputString {}; // ‘âà®ª  ¤«ï åà ­¥­¨ï áâà®ª¨ ª®â®àãî ­ ¤® ¯¥à¥¢¥áâ¨ ¨ áâà®ª  ¤«ï åà ­¥­¨ï ã¦¥ ¯¥à¥¢¥¤ñ­­ëå á¨¬¢®«®¢
 
-    cout << "Ğ’Ğ²ĞµĞ´Ğ¸Ñ‚Ğµ ÑÑ‚Ñ€Ğ¾ĞºÑƒ, ĞºĞ¾Ñ‚Ğ¾Ñ€ÑƒÑ Ğ½Ğ°Ğ´Ğ¾ Ğ¿ĞµÑ€ĞµĞ²ĞµÑÑ‚Ğ¸ Ñ Ğ°Ğ½Ğ³Ğ»Ğ¸Ğ¹ÑĞºĞ¸Ñ… ÑĞ¸Ğ¼Ğ²Ğ¾Ğ»Ğ¾Ğ² Ğ² Ñ€ÑƒÑÑĞºĞ¸Ğµ: ";
-    std::getline(cin, inputString);
+    cout << "‚¢¥¤¨â¥ áâà®ªã, ª®â®àãî ­ ¤® ¯¥à¥¢¥áâ¨ á  ­£«¨©áª¨å á¨¬¢®«®¢ ¢ àãááª¨¥: ";
+    std::getline(cin, inputString); // ®«ãç ¥¬ ¨ § ¯¨áë¢ ¥¬ ¢áî áâà®ªã á ¯à®¡¥« ¬¨ 
 
-    // Ğ¤ÑƒĞ½ĞºÑ†Ğ¸Ñ Ğ¿Ñ€ĞµĞ²Ñ€Ğ°Ñ‰ĞµĞ½Ğ¸Ñ Ğ² Ñ€ÑƒÑÑĞºĞ¸Ğµ ÑĞ¸Ğ¼Ğ²Ğ¾Ğ»Ğ¾Ğ²
-    for (char& c : inputString) // ĞŸĞµÑ€ĞµĞ±Ğ¸Ñ€Ğ°ĞµĞ¼ Ğ¿Ğ¾ ÑĞ¸Ğ¼Ğ²Ğ¾Ğ»Ğ°Ğ¼ Ğ²Ğ²Ğ¾Ğ´Ğ¸Ğ¼ÑƒÑ ÑÑ‚Ñ€Ğ¾ĞºÑƒ
+    // ”ã­ªæ¨ï, ª®â®à ï à §¡¨à ¥â áâà®ªã ¯® á¨¬¢®«ì­®, ¢ë§ë¢ ¥â äã­ªæ¨î ¨ § ¬¥­ï¥â ª ¦¤ë© á¨¬¢®« ­  àãááª¨©
+    for (char& c : inputString) // ¥à¥¡¨à ¥¬ ¯® á¨¬¢®« ¬ ¢¢®¤¨¬ãî áâà®ªã
     {
-        c = englishCharToRussianChar(c); // ĞŸÑ€ĞµĞ²Ñ€Ğ°Ñ‰Ğ°ĞµĞ¼ ĞºĞ°Ğ¶Ğ´Ñ‹Ğ¹ ÑĞ¸Ğ¼Ğ²Ğ¾Ğ» Ğ² Ñ€ÑƒÑÑĞºĞ¸Ğ¹
+        c = englishCharToRussianChar(c); // ‡ ¬¥­ï¥¬  ­£«¨©áª¨© á¨¬¢®« ­  àãááª¨©
     }
 
-    return inputString; // Ğ²Ğ¾Ğ·Ğ²Ñ€Ğ°Ñ‰Ğ°ĞµĞ¼ ÑÑ‚Ñ€Ğ¾ĞºÑƒ ÑƒĞ¶Ğµ Ñ Ñ€ÑƒÑÑĞºĞ¸Ğ¼Ğ¸ ÑĞ¸Ğ¼Ğ²Ğ¾Ğ»Ğ°Ğ¼Ğ¸
+    return inputString; // ¢®§¢à é ¥¬ áâà®ªã ã¦¥ á àãááª¨¬¨ á¨¬¢®« ¬¨
 }
 
 
-// ĞÑĞ½Ğ¾Ğ²Ğ½Ğ°Ñ Ñ„ÑƒĞ½ĞºÑ†Ğ¸Ñ
+// á­®¢­ ï äã­ªæ¨ï
 int main()
 {
-    // ĞŸĞµÑ€ĞµĞ¼ĞµĞ½Ğ½Ñ‹Ğµ
-
-    string language {};
-
-    cout << endl; // ĞÑ‚ÑÑ‚ÑƒĞ¿
+    cout << endl; // âáâã¯
 
     // Welcome Message
 
     cout << "-----" << endl;
-    cout << "Ğ”Ğ¾Ğ±Ñ€Ğ¾ Ğ¿Ğ¾Ğ¶Ğ°Ğ»Ğ¾Ğ²Ğ°Ñ‚ÑŒ Ğ² Ğ¿Ñ€Ğ¾Ğ³Ñ€Ğ°Ğ¼Ğ¼Ñƒ EnglishChar-ToRussionChar. \nĞŸÑ€ĞµĞ´ÑƒĞ¿Ñ€ĞµĞ¶Ğ´ĞµĞ½Ğ¸Ğµ: Ğ½ĞµÑ‚Ñƒ Ğ·Ğ°Ğ¿ÑÑ‚Ñ‹Ñ… Ğ¸ Ñ‚Ğ¾Ñ‡ĞµĞº Ğ¾Ğ½Ğ¸ Ğ·Ğ°Ğ¼ĞµĞ½ÑÑÑ‚ÑÑ Ğ½Ğ° Ñ€Ğ°Ğ½Ğ´Ğ¾Ğ¼Ğ½Ñ‹Ğµ Ğ±ÑƒĞºĞ²Ñ‹." << endl;
+    cout << "„®¡à® ¯®¦ «®¢ âì ¢ ¯à®£à ¬¬ã EnglishChar-ToRussionChar. \nà¥¤ã¯à¥¦¤¥­¨¥: ­¥âã § ¯ïâëå ¨ â®ç¥ª ®­¨ § ¬¥­ïîâáï ­  à ­¤®¬­ë¥ ¡ãª¢ë." << endl;
     cout << "-----" << endl;
 
-    cout << endl; // ĞÑ‚ÑÑ‚ÑƒĞ¿
+    cout << endl; // âáâã¯
 
-    // Ğ’Ñ‹Ğ²Ğ¾Ğ´Ğ¸Ğ¼ Ñ€ĞµĞ·ÑƒĞ»ÑŒÑ‚Ğ°Ñ‚ Ğ¿ĞµÑ€ĞµĞ²Ğ¾Ğ´Ğ° ÑÑ‚Ñ€Ğ¾Ğº Ğ½Ğ° Ñ€ÑƒÑÑĞºĞ¸Ğµ ÑĞ¸Ğ¼Ğ²Ğ¾Ğ»Ñ‹
-
-    std::cout << reverseString() << endl;
+    std::cout << reverseString() << endl; // ‚ë§ë¢ ¥¬ äã­ªæ¨î ¨ ¢ë¢®¤¨¬ à¥§ã«ìâ â
 }
