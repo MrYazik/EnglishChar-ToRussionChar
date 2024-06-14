@@ -6,13 +6,12 @@ using std::cout;
 using std::cin;
 using std::endl;
 using std::string;
-using std::getline;
 using std::size;
 
 // Массивы символов
 
-string english = "f,dult`;pbqrkvyjghcnea[wxio]sm'.zF,DULT`;PBQRKVYJGHCNEA[WXIO]SM'.Z  ?";
-string russian = "абвгдеёжзийклмнопрстуфхцчшщъыьэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ  ?";
+string english = "f,dult`;pbqrkvyjghcnea[wxio]sm'.zF<DULT`:PBQRKVYJGHCNEA[WXIO]SM\">Z  ?!#№$%^";
+string russian = "абвгдеёжзийклмнопрстуфхцчшщъыьэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ  ?!#№$%^";
 
 // Функции для проверок
 
@@ -50,7 +49,7 @@ string reverseString()
 // Основная функция
 int main()
 {
-    char contu;
+    string contuu;
 
     cout << endl; // Отступ
 
@@ -67,5 +66,6 @@ int main()
     cout << endl; // Отступ
 
     cout << "Нажмите на [Enter] для выхода из программы: ";
-    cin >> contu;
+    
+    std::getline(cin, contuu);
 }
