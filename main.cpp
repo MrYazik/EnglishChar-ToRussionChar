@@ -50,6 +50,8 @@ string reverseString()
 // Основная функция
 int main()
 {
+    char contu;
+
     cout << endl; // Отступ
 
     // Welcome Message
@@ -61,4 +63,9 @@ int main()
     cout << endl; // Отступ
 
     std::cout << reverseString() << endl; // Вызываем функцию и выводим результат
+
+    cout << endl; // Отступ
+
+    cout << "Нажмите на [Enter] для выхода из программы: ";
+    cin >> contu;
 }
